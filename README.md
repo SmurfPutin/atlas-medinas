@@ -4,12 +4,12 @@ A static mini-site (HTML / CSS / JS) presenting three Tunisian medinas, built
 for the **DS DevOps** project: Git/GitHub collaboration, Docker
 containerization and a CI/CD pipeline with GitHub Actions.
 
-> ⚠️ Personalize before pushing: replace everything in `[brackets]`.
+> ⚠️ Personalize before pushing: replace everything in `\[brackets]`.
 
 ## 👥 Members
 
-- [First LAST — @github-handle] (repository owner)
-- [Invited collaborator: the teacher / @handle]
+* \[First LAST — @github-handle] (repository owner)
+* \[Invited collaborator: the teacher / @handle]
 
 ## 📁 Project structure
 
@@ -28,9 +28,11 @@ containerization and a CI/CD pipeline with GitHub Actions.
 ## 🚀 Installation and run
 
 ### Locally, without Docker
+
 Open `index.html` in a browser. No server required.
 
 ### With Docker
+
 ```bash
 docker build -t medina-atlas .
 docker run -d -p 8080:80 medina-atlas
@@ -38,6 +40,7 @@ docker run -d -p 8080:80 medina-atlas
 ```
 
 ### With Docker Compose (recommended for the demo)
+
 ```bash
 docker compose up -d
 docker compose logs -f logs   # follow nginx access logs via the 2nd service
@@ -46,14 +49,14 @@ docker compose down
 
 ## 🌿 Branching strategy
 
-| Branch | Role |
-|---|---|
-| `main` | Stable, protected: merges only via PR with green CI |
-| `develop` | Integration: features are merged here first |
-| `feature-*` | One branch per feature (e.g. `feature-souk-filter`) |
-| `feature-docker-v1` | Dedicated containerization branch (assignment requirement) |
+|Branch|Role|
+|-|-|
+|`main`|Stable, protected: merges only via PR with green CI|
+|`develop`|Integration: features are merged here first|
+|`feature-\*`|One branch per feature (e.g. `feature-souk-filter`)|
+|`feature-docker-v1`|Dedicated containerization branch (assignment requirement)|
 
-Workflow: `feature-*` → PR to `develop` → PR `develop` → `main`.
+Workflow: `feature-\*` → PR to `develop` → PR `develop` → `main`.
 
 ## 🛠️ Git commands used
 
@@ -66,18 +69,16 @@ git log --oneline --graph --all
 
 ## 💥 Conflict management (assignment requirement)
 
-**Cause:** [e.g. the hero tagline line in `index.html` was changed
-differently on `feature-hero-v2` and on `develop`, then the two branches
-were merged.]
-
+**Cause:** The hero tagline in index.html was changed to "a thousand detours" on develop, while feature-hero-v2 (branched from one commit earlier) reworded the same line to "one thread to follow". Merging made both versions collide on the same line.
 **Resolution method:**
+
 1. `git merge feature-hero-v2` → conflict reported in `index.html`
 2. Opened the file, analyzed the `<<<<<<<`, `=======`, `>>>>>>>` markers
-3. Chose which version to keep: [which one and why]
+3. Chose which version to keep: kept the develop version ("a thousand detours"), the newer deliberate wording; the branch variant was discarded
 4. `git add index.html` then `git commit` to finalize the merge
 5. Checked with `git log --graph` that the history is clean
 
-**Screenshot / resolution commit:** [link to the merge commit]
+**Screenshot / resolution commit:** resolution merge commit 36fc3eb
 
 ## ⚙️ CI/CD pipeline
 
@@ -89,3 +90,4 @@ to `main` and `develop`:
 3. **Bonus: Scan** — image vulnerability analysis with Trivy
 
 The `main` branch is protected: CI status must be green before any merge.
+
