@@ -1,0 +1,27 @@
+# Project orchestration:
+#   web  → the static site (nginx:alpine), built from the Dockerfile
+#   logs → (bonus) a second service tailing nginx access logs,
+#          to simulate a multi-service architecture.
+services:
+  web:
+    build: .
+    container_name: medinas-web
+    command: sh -c "rm -f /var/log/nginx/access.log && exec nginx -g 'daemon off;'"
+    ports:
+      - "8080:80"
+    volumes:
+      - nginx-logs:/var/log/nginx
+    restart: unless-stopped
+
+  logs:
+    image: alpine:3.20
+    container_name: medinas-logs
+    command: sh -c "touch /var/log/nginx/access.log && tail -f /var/log/nginx/access.log"
+    volumes:
+      - nginx-logs:/var/log/nginx
+    depends_on:
+      - web
+    restart: unless-stopped
+
+volumes:
+  nginx-logs:

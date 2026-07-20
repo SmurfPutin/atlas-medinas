@@ -1,0 +1,8 @@
+# Fichiers inutiles dans l'image Docker
+.git
+.github
+README.md
+GUIDE-EXECUTION.md
+*.md
+.DS_Store
+node_modules
