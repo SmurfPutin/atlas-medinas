@@ -21,7 +21,7 @@
         if (match) visible++;
       });
 
-      if (empty && visible === 0) empty.hidden = false;
+      if (empty) empty.hidden = visible !== 0;
     });
   }
 var lantern = document.getElementById("lantern");
