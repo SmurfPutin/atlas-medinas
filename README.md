@@ -4,12 +4,10 @@ A static mini-site (HTML / CSS / JS) presenting three Tunisian medinas, built
 for the **DS DevOps** project: Git/GitHub collaboration, Docker
 containerization and a CI/CD pipeline with GitHub Actions.
 
-> ⚠️ Personalize before pushing: replace everything in `\[brackets]`.
-
 ## 👥 Members
 
-* \[First LAST — @github-handle] (repository owner)
-* \[Invited collaborator: the teacher / @handle]
+* @SmurfPutin (repository owner)
+* Teacher — collaborator invite pending
 
 ## 📁 Project structure
 
@@ -53,10 +51,10 @@ docker compose down
 |-|-|
 |`main`|Stable, protected: merges only via PR with green CI|
 |`develop`|Integration: features are merged here first|
-|`feature-\*`|One branch per feature (e.g. `feature-souk-filter`)|
+|`feature-\\\*`|One branch per feature (e.g. `feature-souk-filter`)|
 |`feature-docker-v1`|Dedicated containerization branch (assignment requirement)|
 
-Workflow: `feature-\*` → PR to `develop` → PR `develop` → `main`.
+Workflow: `feature-\\\*` → PR to `develop` → PR `develop` → `main`.
 
 ## 🛠️ Git commands used
 
