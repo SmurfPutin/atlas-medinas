@@ -6,6 +6,7 @@ services:
   web:
     build: .
     container_name: medinas-web
+    command: sh -c "rm -f /var/log/nginx/access.log && exec nginx -g 'daemon off;'"
     ports:
       - "8080:80"
     volumes:
