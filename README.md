@@ -1,15 +1,15 @@
-# Medina Atlas 🕌
+# Medina Atlas 
 
 A static mini-site (HTML / CSS / JS) presenting three Tunisian medinas, built
 for the **DS DevOps** project: Git/GitHub collaboration, Docker
 containerization and a CI/CD pipeline with GitHub Actions.
 
-## 👥 Members
+## &#x20;Members
 
 * @SmurfPutin (repository owner)
 * Teacher — collaborator invite pending
 
-## 📁 Project structure
+## &#x20;Project structure
 
 ```
 .
@@ -23,7 +23,7 @@ containerization and a CI/CD pipeline with GitHub Actions.
 └── .github/workflows/ci.yml  # CI/CD pipeline (test → build → scan)
 ```
 
-## 🚀 Installation and run
+## &#x20;Installation and run
 
 ### Locally, without Docker
 
@@ -45,7 +45,7 @@ docker compose logs -f logs   # follow nginx access logs via the 2nd service
 docker compose down
 ```
 
-## 🌿 Branching strategy
+## &#x20;Branching strategy
 
 |Branch|Role|
 |-|-|
@@ -56,7 +56,7 @@ docker compose down
 
 Workflow: `feature-\\\*` → PR to `develop` → PR `develop` → `main`.
 
-## 🛠️ Git commands used
+## &#x20;Git commands used
 
 ```bash
 git clone / git status / git add / git commit -m
@@ -65,7 +65,7 @@ git push -u origin <branch> / git pull
 git log --oneline --graph --all
 ```
 
-## 💥 Conflict management (assignment requirement)
+## &#x20;Conflict management (assignment requirement)
 
 **Cause:** The hero tagline in index.html was changed to "a thousand detours" on develop, while feature-hero-v2 (branched from one commit earlier) reworded the same line to "one thread to follow". Merging made both versions collide on the same line.
 **Resolution method:**
@@ -78,7 +78,7 @@ git log --oneline --graph --all
 
 **Screenshot / resolution commit:** resolution merge commit 36fc3eb
 
-## ⚙️ CI/CD pipeline
+## &#x20;CI/CD pipeline
 
 The `.github/workflows/ci.yml` workflow runs on every push and PR
 to `main` and `develop`:
@@ -88,4 +88,38 @@ to `main` and `develop`:
 3. **Bonus: Scan** — image vulnerability analysis with Trivy
 
 The `main` branch is protected: CI status must be green before any merge.
+
+## &#x20;Issue traceability
+
+| Issue | Label | Resolved by | Via | Status |
+
+|---|---|---|---|---|
+
+| #1 Set up the html/css/js structure | enhancement | `a3ba32d` | PR #8 | Closed |
+
+| #2 Hero section and medina cards | enhancement | `a3ba32d` | PR #8 | Closed |
+
+| #3 Souk search filter | enhancement | `bfb9181` | PR #10 | Closed |
+
+| #4 Lantern (dark) mode | enhancement | `14ed1a0` | PR #10 | Closed |
+
+| #5 Write the README | documentation | `3eb0738` | PR #13 | Closed |
+
+| #6 Dockerfile on feature-docker-v1 | enhancement | `8af6769` | PR #11 | Closed |
+
+| #7 GitHub Actions pipeline | enhancement | `33ebe6d` | direct to develop, released to main | Closed |
+
+| #9 Empty-state message bug | bug | `f7ea799` | PR #10 | Closed |
+
+
+
+## &#x20;Commit convention
+
+`feat:` new feature · `fix:` bug correction · `docs:` documentation · `chore:` setup/config · `merge:` merge commits. Feature commits reference their issue (`closes #N`).
+
+
+
+## &#x20;Identity note
+
+Terminal commits appear as `SmurfPutin <kharrath2@gmail.com>`; merges made through the GitHub web UI appear as `Khalil <111258550+SmurfPutin@users.noreply.github.com>`. Both identities are the same author (repository owner).
 
