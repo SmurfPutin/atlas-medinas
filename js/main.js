@@ -1,5 +1,5 @@
 // Medina Atlas — interactions
-// 1) Souk filter
+// 1) Souk filter  2) Lantern (dark) 
 
 (function () {
   "use strict";
@@ -22,6 +22,15 @@
       });
 
       if (empty && visible === 0) empty.hidden = false;
+    });
+  }
+var lantern = document.getElementById("lantern");
+
+  if (lantern) {
+    lantern.addEventListener("click", function () {
+      var on = document.body.classList.toggle("lantern-on");
+      lantern.setAttribute("aria-pressed", String(on));
+      lantern.textContent = on ? "Dim the lantern" : "Light the lantern";
     });
   }
 })();
