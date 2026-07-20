@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medina Atlas — a pocket guide</title>
+  <meta name="description" content="A static mini-guide to the medinas of Tunis, Sfax and Sousse.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wordmark">
+      <span class="star" aria-hidden="true"></span>
+      <span>Medina Atlas</span>
+    </div>
+    <nav class="site-nav">
+      <a href="#medinas">Medinas</a>
+      <a href="#souks">Souks</a>
+      <a href="html/about.html">About</a>
+      <button id="lantern" class="lantern" type="button" aria-pressed="false">
+        Light the lantern
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Pocket guide · Tunisia</p>
+      <h1>Three medinas,<br>a thousand detours.</h1>
+      <p class="lede">
+        A static, no-nonsense guide for getting lost — on purpose —
+        in the medinas of Tunis, Sfax and Sousse.
+      </p>
+    </section>
+
+    <div class="khatam-divider" aria-hidden="true">
+      <span class="star"></span><span class="star"></span><span class="star"></span>
+    </div>
+
+    <section id="medinas" class="medinas">
+      <h2>The medinas</h2>
+      <div class="card-grid">
+        <article class="card">
+          <p class="card-tag">UNESCO listed · 1979</p>
+          <h3>Tunis</h3>
+          <p>The largest. 700 monuments, from palaces to mosques,
+             and the El Attarine souk scented with jasmine and amber.</p>
+          <p class="card-fact">Landmark: the Zitouna Mosque, heart of the maze.</p>
+        </article>
+        <article class="card">
+          <p class="card-tag">UNESCO listed · 1988</p>
+          <h3>Sfax</h3>
+          <p>The most authentic. Barely touristic, with intact ramparts —
+             trade here still works the way it did in the 9th century.</p>
+          <p class="card-fact">Landmark: Bab Diwan, the main gate.</p>
+        </article>
+        <article class="card">
+          <p class="card-tag">UNESCO listed · 1988</p>
+          <h3>Sousse</h3>
+          <p>The most maritime. The ribat has watched over the harbour
+             since 821, and the kasbah overlooks it all.</p>
+          <p class="card-fact">Landmark: the ribat and its watchtower.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="souks" class="souks">
+      <h2>Find a souk</h2>
+      <p class="hint">Filter by craft — the list updates without reloading the page.</p>
+      <input id="souk-search" type="search" placeholder="E.g. leather, perfume, wool…" aria-label="Filter souks">
+      <ul id="souk-list" class="souk-list">
+        <li data-tags="perfume oil essence">El Attarine Souk — perfume makers <em>(Tunis)</em></li>
+        <li data-tags="leather shoes wool">El Blaghgia Souk — babouches and leather <em>(Tunis)</em></li>
+        <li data-tags="copper metal craft">Blacksmiths' Souk — hammered copper <em>(Sfax)</em></li>
+        <li data-tags="fish market hall">Fish Market — the morning auction <em>(Sfax)</em></li>
+        <li data-tags="fabric wool rug carpet">El Caid Souk — fabrics and rugs <em>(Sousse)</em></li>
+        <li data-tags="jewel gold silver">Jewellers' Souk — gold and filigree <em>(Sousse)</em></li>
+      </ul>
+      <p id="souk-empty" class="empty" hidden>No souk matches — try “leather” or “perfume”.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>DS DevOps project — static HTML / CSS / JS site, containerized with Docker, delivered through GitHub Actions.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
